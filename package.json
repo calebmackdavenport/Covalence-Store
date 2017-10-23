@@ -32,9 +32,9 @@
   "scripts": {
     "test": "source variables && npm run dev",
     "build:ts": "tsc -p .",
-    "server": "node server/index.js",
     "dev": "nodemon -e ts --dir server/ --exec \"npm run build:ts && npm run server\"",
-    "start": "nodemon -e ts --dir server/ --exec \"npm run build:ts && npm run server\""
+    "start": "npm run build:ts && npm run server",
+    "server": "node server/index.js"
   },
   "author": "Group 5",
   "license": "ISC"
