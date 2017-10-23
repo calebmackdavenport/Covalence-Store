@@ -5,7 +5,6 @@
 ### Info
 * You can find a visual mockup of this site [here](https://projects.invisionapp.com/share/AKB778769#/227819973_Covalence-Store-01)
 * This site will have the following pages:
-<<<<<<< HEAD
    * A welcome page
    * A product list page - Shows tiles of product images, along with title, short description, and price
    * Contact us page - Should have a form where people can input their name, email, and a message. You should use sendgrid to email yourselves in response to this form being filled out.
