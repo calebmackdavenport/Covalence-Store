@@ -22,7 +22,7 @@ A group project giving us experience working in teams to accomplish the goal of 
         * Contact Us link
         * Cart/Checkout link (popover/collapsible is extra)
     
-### Requirements (CHECK)
+### Requirements
 * Must use a MySQL database hosted in AWS RDS, and use stored procedures
     * Should have tables for Categories, Products, Purchases, and PurchasesProducts
     * Categories
