@@ -1,2 +1,1 @@
-web: npm run start
-#changedtoProcfile
+web: npm run test
