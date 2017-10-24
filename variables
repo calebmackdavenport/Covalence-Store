@@ -1,0 +1,5 @@
+STRIPE_SECRET_KEY=“sk_test_jDyHzhmWU69HTBtUb9A1WIKo
+export DATABASE_URL=“us-cdbr-iron-east-05.cleardb.net”
+export DATABASE_USERNAME=“bbe5ba8c7cbbbb”
+export DATABASE_PASSWORD=“6e653efc”
+export DATABASE_NAME=“heroku_b20e8a811fe750d”
