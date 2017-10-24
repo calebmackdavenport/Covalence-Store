@@ -2,10 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var db = require('../config/db');
 function all() {
-    return db.rows('GetAllProducts');
+    return db.rows('getAllProducts');
 }
 exports.all = all;
 function read(id) {
-    return db.row('GetProduct', [id]);
+    return db.row('getProduct', [id]);
 }
 exports.read = read;
