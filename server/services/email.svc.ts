@@ -2,7 +2,7 @@ let helper = require('mailgun').mail;
 let mg = require ('mailgun')(process.env.MAILGUN_API_KEY);
 //add receipt features to email 
 
-export function sendEmail(to: string, from: string, subject: string, content) {
+export function sendEmail(to: string, from: string, subject: string, content: any) {
     var fromEmail = new helper.Email(from);
     var toEmail = new helper.Email(to);
     var content = new helper.Content('text/html', content);
