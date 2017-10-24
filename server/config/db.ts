@@ -2,10 +2,10 @@ import * as mysql from 'mysql';
 
 export let pool = mysql.createPool({
     connectionLimit: 10,
-    host: 'localhost',
-    user: 'root',
-    password: 'test',
-    database: 'AngularBlog'
+    host: 'us-cdbr-iron-east-05.cleardb.net',
+    user: 'bbe5ba8c7cbbbb',
+    password: '6e653efc',
+    database: 'heroku_b20e8a811fe750d'
 });
 
 // SQL procedures
