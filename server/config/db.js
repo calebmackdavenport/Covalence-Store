@@ -3,10 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mysql = require("mysql");
 exports.pool = mysql.createPool({
     connectionLimit: 10,
-    host: 'localhost',
-    user: 'root',
-    password: 'test',
-    database: 'AngularBlog'
+    host: process.env.DATABASE_URL,
+    user: process.env.DATABASE_USERNAME,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE_NAME
 });
 // SQL procedures
 function callProcedure(procedureName, args = []) {

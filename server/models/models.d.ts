@@ -13,4 +13,9 @@ declare namespace models {
         price: number;
         url: string;
     }
+    interface iPurchase {
+        id: number;
+        price: number;
+        stripeid: string;
+    }
 }

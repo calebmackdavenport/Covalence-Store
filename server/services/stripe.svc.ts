@@ -6,6 +6,6 @@ export function charge(token: string, amt: number) {
         amount: amt * 100, //specifically amt is the amount in cents. 0.45 cents becomes amount:45
         currency: 'usd',
         source: token,
-        description: 'Covalence Store: Payment'
+        description: 'Covalence-Store'
     });
 }

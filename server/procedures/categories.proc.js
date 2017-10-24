@@ -2,6 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const db_1 = require("../config/db");
 function all() {
-    return db_1.rows('GetCategories');
+    return db_1.rows('getCategories');
 }
 exports.all = all;

@@ -1,7 +1,5 @@
 import * as express from 'express';
 import * as mailService from "../services/email.svc";
-// var express = require('express');
-// var mailService = require('../services/email.svc');
 
 let router = express.Router();
 
@@ -20,4 +18,4 @@ router.post('/', (req, res) => {
     });
 });
 
-module.exports = router;
+export default router;

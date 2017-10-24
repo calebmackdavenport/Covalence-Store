@@ -20,7 +20,7 @@ export function isServerAsset(path: string) {
 export default function stateRouting(req: Request, res: Response, next: Function) {
  if (isServerAsset(req.url)) {
      next();
- }   else {
+     }   else {
     res.sendFile(join(__dirname, '../../client/index.html'));
- }
+     }
 }

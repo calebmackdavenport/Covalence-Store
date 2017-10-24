@@ -7,8 +7,7 @@ function charge(token, amt) {
         amount: amt * 100,
         currency: 'usd',
         source: token,
-        description: 'MyBlog: Donation'
+        description: 'Covalence-Store'
     });
-    //returning a promise so when we call .charge, we can use .then(...)
 }
 exports.charge = charge;
