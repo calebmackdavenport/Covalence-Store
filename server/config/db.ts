@@ -2,10 +2,10 @@ import * as mysql from 'mysql';
 
 export let pool = mysql.createPool({
     connectionLimit: 10,
-    host: 'us-cdbr-iron-east-05.cleardb.net',
-    user: 'bbe5ba8c7cbbbb',
-    password: '6e653efc',
-    database: 'heroku_b20e8a811fe750d'
+    host: process.env.DATABASE_URL,
+    user: process.env.DATABASE_USERNAME,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE_NAME
 });
 
 // SQL procedures

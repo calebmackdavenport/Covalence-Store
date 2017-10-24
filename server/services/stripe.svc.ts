@@ -6,7 +6,6 @@ export function charge(token: string, amt: number) {
         amount: amt * 100, //specifically amt is the amount in cents. 0.45 cents becomes amount:45
         currency: 'usd',
         source: token,
-        description: 'MyBlog: Donation'
+        description: 'Covalence Store: Payment'
     });
-    //returning a promise so when we call .charge, we can use .then(...)
 }
