@@ -6,5 +6,5 @@ export function all() {
 }
 
 export function create(purchaseamount: number, purchaseid: string) {
-    return db.row('InsertPurchase', [purchaseamount, purchaseid])
+    return db.row('insertPurchase', [purchaseamount, purchaseid])
 }
