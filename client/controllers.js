@@ -1,13 +1,16 @@
 angular.module('store.controllers', [])
 .controller('WelcomeController', ['$scope', 'SEOService', '$location', function($scope, SEOService, $location) {
+
     SEOService.setSEO({
         title: 'Covalence Store',
         url: $location.url(),
         description: 'Welcome to the Covalence Store'
     })
+
 }])
 .controller('ApparelController', ['$scope', 'Apparel', 'SEOService', '$location', function($scope, Apparel, SEOService, $location) {
     $scope.apparels = Apparel.query();
+
     SEOService.setSEO({
         title: 'Apparel Page',
         url: $location.url(),
@@ -16,6 +19,7 @@ angular.module('store.controllers', [])
 }])
 .controller('MiscController', ['$scope', 'Misc', 'SEOService', '$location', function($scope, Misc, SEOService, $location) {
     $scope.miscs = Misc.query();
+
     SEOService.setSEO({
         title: 'Covalence Store - Misc',
         url: $location.url(),
@@ -33,6 +37,7 @@ angular.module('store.controllers', [])
 }])
 .controller('ProductsController', ['$scope', '$rootScope', 'Product', 'SEOService', '$location', '$routeParams', function($scope, $rootScope, Product, SEOService, $location, $routeParams) {
     $scope.product = product.query();
+
         SEOService.setSEO({
             title: $scope.product.title,
             url: $location.url(),
@@ -51,6 +56,7 @@ angular.module('store.controllers', [])
             alert('Thanks you for contacting us!')
         });
     }
+
     SEOService.setSEO({
             title: 'Contact Us',
             url: $location.url(),
@@ -58,6 +64,8 @@ angular.module('store.controllers', [])
     });
 }])
 .controller('CheckoutController', ['$scope', '$rootScope', '$location', 'Checkout', 'SEOService', function($scope, $rootScope, $location, Checkout, SEOService) {
+
+
     SEOService.setSEO({
         title: 'Covalence Store - Checkout',
         url: $location.url(),
@@ -65,6 +73,7 @@ angular.module('store.controllers', [])
     })
 }])
 .controller('CartController', ['$scope', '$location', function($scope, $location) {
+
     SEOService.setSEO({
         title: 'Covalence Store - Cart',
         url: $location.url(),
