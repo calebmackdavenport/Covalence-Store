@@ -7,6 +7,6 @@ function all() {
 }
 exports.all = all;
 function create(purchaseamount, purchaseid) {
-    return db.row('InsertPurchase', [purchaseamount, purchaseid]);
+    return db.row('insertPurchase', [purchaseamount, purchaseid]);
 }
 exports.create = create;
