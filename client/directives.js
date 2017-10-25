@@ -7,4 +7,13 @@ angular.module('Store.directives', [])
             activePage: '='
         }
     };
+}])
+.directive('footerNavigation', [function() {
+    return {
+        templateUrl: 'directives/footer.html',
+        restrict: 'E',
+        scope: {
+            activePage: '='
+        }
+    };
 }]);
