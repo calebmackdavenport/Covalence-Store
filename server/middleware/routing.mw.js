@@ -1,7 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const path_1 = require("path");
-// var clientPath = path.join(__dirname, '../../client');
+function stateRouting(req, res, next) {
+    if (isServerAsset(req.url)) {
+        next();
+    }
+    else {
+        res.sendFile(path_1.join(__dirname, '../../client/index.html'));
+    }
+}
+exports.default = stateRouting;
 function isServerAsset(path) {
     var pieces = path.split('/');
     if (pieces.length == 0) {
@@ -15,13 +23,3 @@ function isServerAsset(path) {
     }
     return false;
 }
-exports.isServerAsset = isServerAsset;
-function stateRouting(req, res, next) {
-    if (isServerAsset(req.url)) {
-        next();
-    }
-    else {
-        res.sendFile(path_1.join(__dirname, '../../client/index.html'));
-    }
-}
-exports.default = stateRouting;
