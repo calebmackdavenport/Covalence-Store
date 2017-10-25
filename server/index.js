@@ -2,9 +2,19 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const path_1 = require("path");
 const express = require("express");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+var routing = require('./middleware/routing.mw');
+var api = require('./api');
+var prerender = require('prerender-node');
 const clientPath = path_1.join(__dirname, '../client');
 const app = express();
+app.use(prerender);
 app.use(express.static(clientPath));
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use('/api', api);
+app.get('*', routing.stateRouting);
 app.listen(process.env.PORT || 3000, () => {
     console.log("listening");
 });
