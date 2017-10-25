@@ -1,5 +1,45 @@
-#nav1 {  
-    background-color:#F00; /*whichever you want*/
-    opacity: 0.5; 
-    filter:(opacity=50);        
+/* HEADER */
+
+main navigation {
+    position: relative;
 }
+.nav-text {
+    color: rgb(67, 182, 200);
+    margin-top: 0.3em; 
+    font-size: 1.25em;
+    text-transform: uppercase; 
+}
+.nav-color {
+    background-color: rgba(34, 43, 46, 0.85);
+}
+.circle {
+    border-radius: 50%;
+	width: 2em;
+    height: 2em; 
+    background-color: rgb(67, 182, 200);
+    text-align: center;
+    color: white;
+    vertical-align: middle;
+    line-height: 2em; 
+} 
+
+/* FOOTER */
+.brand-footer {
+    background-color: rgb(244, 244, 244);
+    color: rgb(209, 210, 212);
+    padding: 1em;
+}
+.copyright {
+    float: right;
+    margin-top: 1.25em;
+}
+
+/* WELCOME */
+
+/* APPAREL MISC */
+
+/* SINGLE */
+
+/* CONTACT */
+
+/* CHECKOUT */
