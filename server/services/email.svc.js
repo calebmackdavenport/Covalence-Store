@@ -1,18 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-let helper = require('mailgun').mail;
-let mg = require('mailgun')(process.env.MAILGUN_API_KEY);
-//add receipt features to email 
+const sendgrid = require("sendgrid");
+const helper = sendgrid.mail;
+const sg = sendgrid(process.env.SENDGRID_API_KEY || '');
 function sendEmail(to, from, subject, content) {
-    var fromEmail = new helper.Email(from);
-    var toEmail = new helper.Email(to);
-    var content = new helper.Content('text/html', content);
-    var mail = new helper.Mail(fromEmail, subject, toEmail, content);
-    var request = mg.emptyRequest({
+    let fromEmail = new helper.Email(from);
+    let toEmail = new helper.Email(to);
+    let emailContent = new helper.Content('text/html', content);
+    let mail = new helper.Mail(fromEmail, subject, toEmail, emailContent);
+    let request = sg.emptyRequest({
         method: 'POST',
         path: '/v3/mail/send',
         body: mail.toJSON()
     });
-    return mg.API(request);
+    return sg.API(request);
 }
 exports.sendEmail = sendEmail;

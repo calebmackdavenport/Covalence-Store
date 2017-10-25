@@ -1,4 +1,4 @@
-angular.module('Store.directives', [])
+angular.module('store.directives', [])
 .directive('mainNavigation', [function() {
     return {
         templateUrl: 'directives/navbar.html',

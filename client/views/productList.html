@@ -1,1 +1,13 @@
-<footer-navigation  ></footer-navigation>
+<main-navigation></main-navigation>
+<div class="container">
+        <div class="row">
+            <a ng-repeat= "product in products" ng-href="/{{ product.id }}">
+                <div class="col-sm">  
+                    <img ng-src="{{ product.imageurl }}" class="photo" alt="">
+                    <p>{{ product.title }}</p>
+                    <p>{{ product.price | currency }}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+<footer-navigation></footer-navigation>
