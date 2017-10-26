@@ -1,11 +1,23 @@
 import * as mysql from 'mysql';
 
+// export let pool = mysql.createPool({
+//     connectionLimit: 10,
+//     host: process.env.DATABASE_URL,
+//     user: process.env.DATABASE_USERNAME,
+//     password: process.env.DATABASE_PASSWORD,
+//     database: process.env.DATABASE_NAME
+// });
+// export DATABASE_URL=“us-cdbr-iron-east-05.cleardb.net”
+// export DATABASE_USERNAME=“bbe5ba8c7cbbbb”
+// export DATABASE_PASSWORD=“6e653efc”
+// export DATABASE_NAME=“heroku_b20e8a811fe750d”
+
 export let pool = mysql.createPool({
     connectionLimit: 10,
-    host: process.env.DATABASE_URL,
-    user: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE_NAME
+    host: "us-cdbr-iron-east-05.cleardb.net",
+    user: "bbe5ba8c7cbbbb",
+    password: "6e653efc",
+    database: "heroku_b20e8a811fe750d"
 });
 
 // SQL procedures

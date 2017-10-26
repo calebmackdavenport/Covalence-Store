@@ -1,5 +1,4 @@
 /* HEADER */
-
 main navigation {
     position: relative;
 }
@@ -21,7 +20,18 @@ main navigation {
     color: white;
     vertical-align: middle;
     line-height: 2em; 
-} 
+}
+.navbar-nav .active>.nav-link {
+    text-decoration: none;
+    font-weight: bold;
+    border-radius:0px;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+    color: white !important;
+    background-color: transparent !important;
+}
+
 
 /* FOOTER */
 .brand-footer {
@@ -34,12 +44,182 @@ main navigation {
     margin-top: 1.25em;
 }
 
+
+
 /* WELCOME */
+#welcomebackground {
+    background: url("/images/covalence-store-home-copy.jpg") no-repeat center center scroll;
+    margin-top: 68px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    min-height: 800px;
+    min-width: 100%;
+}
+
+.welcome-text {
+    padding: 15rem 0;
+    text-align: center;
+    right:20em;
+    background: rgba(0, 0, 0, 0.4);
+    min-height: 800px;
+}
+
+.welcome {
+    height: 100vh;
+    margin-top: 68px;
+    background-image: url('/images/covalence-store-home-copy.jpg');
+    background-position: center center;
+    background-size: contain;
+    background-size: cover;
+}
+.welcome img {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.hello-text {
+    float: left;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.hello-text h1 {
+    font-size: 3.75em;
+}
+#shop-btn {
+    margin-top: 1.5em;
+    border-radius: none;
+    padding: 0.5em;
+}
+#shop-btn:focus {
+    outline: 0;
+}
+.btn {
+    font-weight: lighter;
+}
+
+
 
 /* APPAREL MISC */
 
+
+
 /* SINGLE */
 
+
+
 /* CONTACT */
+#contact-form {
+    width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+  }
+body {
+  margin: 68px 0 0 0;
+}
+#contact {
+    color: #17a2b8;
+    font-family: brandon grotesque;
+  }
+
+
 
 /* CHECKOUT */
+.checkout-container {
+    margin: 5em 5em 2em;
+    border: 1px solid lightgray;
+    border-radius: 0.45em;
+    overflow: auto;
+    background-color: rgb(244, 244, 244);
+}
+
+.payment-form {
+    background-color: white;
+    padding-bottom: 1em;
+}
+
+.badge {
+    background-color: #2aabd2;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;  
+    color: #FFF;
+    text-align: center; 
+    top: 1em;
+}
+
+.payment-img {
+    width: 35px;
+}
+
+.purchase-btn-container {
+    text-align: center;
+}
+
+.checkout-cart {
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+}
+#cancel-return {
+    border-radius: 0px;
+    background-color: white;
+    color: red;
+    font-size: 1em;
+}
+#cancel-return:focus, #cancel-return:hover {
+    outline: 0;
+    background-color: white;
+}
+.apply {
+    background-color: rgb(244, 244, 244);
+    border: 1px solid lightgray;
+    color: gray;
+}
+.apply:focus, .apply:hover {
+    outline: 0;
+    color: gray;
+}
+.order-total-left {
+    text-align: left;
+}
+
+.order-total-right {
+    text-align: right;
+}
+
+.cart-item {
+    margin-bottom: 1em;
+    float: left;
+}
+
+.cart-img {
+    width: 5em;
+    float: left;
+}
+.left-block {
+    margin-top: 0.5em;
+    margin-left: -3em;
+} 
+.product-right {
+    float: right;
+    margin-top: 0.5em;
+}   
+#submit-btn {
+    border-radius: none;
+    margin-top: 0.5em;
+    width: 10em;
+    font-size: 1.1em;
+}
+#submit-btn:focus {
+    outline: 0;
+}
+#testing {
+    background-color: #f5f5f562;
+}
