@@ -1,14 +1,7 @@
-<main-navigation></main-navigation>
+<main-navigation active-page="'apparel'"></main-navigation>
 
-<div class="container">
-    <div class="well well-sm">
-        <strong>Category Title</strong>
-        <div class="btn-group">
-            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
-                class="glyphicon glyphicon-th"></span>Grid</a>
-        </div>
-    </div>
+<!-- <div class="container">
+    
     <div id="products" class="row list-group">
             <div class="item  col-xs-4 col-lg-4">
                     <div class="thumbnail">
@@ -91,4 +84,29 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+
+        <div class="container-fluid">
+            <div class="row line-line"> 
+               <div class="col-xs-12 col-md-6 col-sm-6" ng-repeat="product in products">
+                   <div class="center-block products">
+                       <a href="/{{ product.id }}"><img src="{{ product.imageurl }}" class="thumbnail product-thumbnail product img-responsive" alt="{{ product.title }}"></a>
+                       <a href="/{{ product.id }}"><div class="grid-market">
+                           <h4 class="description">{{ product.title }}
+                               <p>{{ product.description }}</p>
+                       <span class="currency">${{ product.price }}</span></h4></div></a>
+                   </div>
+               </div>
+            </div> 
+       </div>
+
+
+<!--        
+       <div class="jumbotron" id="apparel-pic"></div>
+       
+       <div class="product-box" ng-repeat="product in products">
+           <img class="list-pic" ng-src="{{ product.imageurl }}" ng-click="changeView(product.id)">
+           <h4 class="product-title">{{ product.title }}</h4><h5 class="product-price">${{ product.price }}</h5>
+       </div> -->
+
+<footer-navigation></footer-navigation>

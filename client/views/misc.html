@@ -1,94 +1,17 @@
-<div class="container">
-    <div class="well well-sm">
-        <strong>Category Title</strong>
-        <div class="btn-group">
-            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
-                class="glyphicon glyphicon-th"></span>Grid</a>
-        </div>
-    </div>
-    <div id="products" class="row list-group">
-            <div class="item  col-xs-4 col-lg-4">
-                    <div class="thumbnail">
-                        <img class="group list-group-image" src="/images/covalence-store-misc-14.png" alt="" />
-                        <div class="caption">
-                            <h4 class="group inner list-group-item-heading">
-                                Covalence Mug</h4>
-                            <p class="group inner list-group-item-text">
-                                Ceramic vessel to hold the liquid of your choice. Dishwasher safe, Handmade with aritsan clay and engraved with lightsabers. </p>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        $30</p>
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item  col-xs-4 col-lg-4">
-                    <div class="thumbnail">
-                        <img class="group list-group-image" src="/images/covalence-store-misc-15.png" alt="" />
-                        <div class="caption">
-                            <h4 class="group inner list-group-item-heading">
-                                Front End Sticker</h4>
-                            <p class="group inner list-group-item-text">
-                                Boring notebook? Slap a sticker on it!</p>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        $5</p>
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item  col-xs-4 col-lg-4">
-                    <div class="thumbnail">
-                        <img class="group list-group-image" src="/images/covalence-store-misc-16.png" alt="" />
-                        <div class="caption">
-                            <h4 class="group inner list-group-item-heading">
-                                Full Stack Sticker</h4>
-                            <p class="group inner list-group-item-text">
-                                Got a Mac? Put this sticker on the back!</p>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        $5</p>
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item  col-xs-4 col-lg-4">
-                    <div class="thumbnail">
-                        <img class="group list-group-image" src="/images/covalence-store-misc-17.png" alt="" />
-                        <div class="caption">
-                            <h4 class="group inner list-group-item-heading">
-                                Aluminum Water Bottle</h4>
-                            <p class="group inner list-group-item-text">
-                                Environmentally conscious? Want to show off that Covalence swag? Get your 8 cups a day with this water bottle!</p>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        $35</p>
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<main-navigation active-page="'misc'"></main-navigation>
+
+<div class="container-fluid">
+        <div class="row line-line"> 
+           <div class="col-xs-12 col-md-6 col-sm-6" ng-repeat="product in products">
+               <div class="center-block products">
+                   <a href="/{{ product.id }}"><img src="{{ product.imageurl }}" class="thumbnail product-thumbnail product img-responsive" alt="{{ product.title }}"></a>
+                   <a href="/{{ product.id }}"><div class="grid-market">
+                       <h4 class="description">{{ product.title }}
+                           <p>{{ product.description }}</p>
+                   <span class="currency">${{ product.price }}</span></h4></div></a>
+               </div>
+           </div>
+        </div> 
+   </div>
     
-    
+<footer-navigation></footer-navigation>

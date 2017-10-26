@@ -5,7 +5,7 @@ let router = express.Router();
 
 //display all misc
 router.get('/', (req, res) => {
-        procedures.all()
+        procedures.all(2)
         .then((misc) => {
             res.send(misc);
         }).catch((err) => {

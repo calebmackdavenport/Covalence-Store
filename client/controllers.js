@@ -8,8 +8,12 @@ angular.module('store.controllers', [])
     })
 
 }])
-.controller('ApparelController', ['$scope', 'Apparel', 'SEOService', '$location', function($scope, Apparel, SEOService, $location) {
-    $scope.apparels = Apparel.get(1);
+.controller('ApparelController', ['$scope', 'Apparel', 'ProductByCatId', 'SEOService', '$location', function($scope, Apparel, ProductByCatId, SEOService, $location) {
+    $scope.products = ProductByCatId.query({ id: 1 });
+    console.log($scope.products);
+    $scope.changeView = function (id) {
+        $location.url('/product/' + id);
+    }
 
     SEOService.setSEO({
         title: 'Apparel Page',
@@ -17,8 +21,12 @@ angular.module('store.controllers', [])
         description: 'Covalence Store - Apparel'
     })
 }])
-.controller('MiscController', ['$scope', 'Misc', 'SEOService', '$location', function($scope, Misc, SEOService, $location) {
-    $scope.miscs = Misc.query();
+.controller('MiscController', ['$scope', 'Misc', 'ProductByCatId', 'SEOService', '$location', function($scope, Misc, ProductByCatId, SEOService, $location) {
+    $scope.products = ProductByCatId.query({ id: 2 });
+    console.log($scope.products);
+    $scope.changeView = function (id) {
+        $location.url('/product/' + id);
+    }
 
     SEOService.setSEO({
         title: 'Covalence Store - Misc',

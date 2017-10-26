@@ -7,3 +7,7 @@ export function all(): Promise<Array<models.IProduct>>{
 export function read(id: number): Promise<models.IProduct> {
     return db.row('getProduct', [id]);
 }
+export function categoryread(categoryid: number): Promise<Array<models.IProduct>> {
+    return rows('getProductByCatId', [categoryid]);
+}
+

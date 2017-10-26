@@ -1,5 +1,5 @@
 import * as express from 'express';
-import * as procedures from "../procedures/product.proc";
+import * as procedures from "../procedures/products.proc";
 
 let router = express.Router();
 
@@ -14,18 +14,27 @@ router.get('/', (req, res) => {
         });
     });
 
+    router.get('/categories/:id', (req, res) => {
+        procedures.categoryread(req.params.id)
+        .then((product) => {
+            res.send(product);
+            console.log("test");
+        }).catch((e) => {
+            console.log(e);
+            res.sendStatus(500);
+        });
+    });
+
 //display single misc
 
-router.route('/:id')
-.get(function(req,res) {
-        procedures.read(req.params.id)
-.then(function(singleProduct) {
-        res.send(singleProduct);
-}).catch(function(err) {
-        console.log(err);
+router.get('/:id', (req, res) => {
+    procedures.read(req.params.id)
+    .then((product) => {
+        res.send(product);
+    }).catch((e) => {
+        console.log(e);
         res.sendStatus(500);
     });
-}) 
-
+});
 
 export default router;
