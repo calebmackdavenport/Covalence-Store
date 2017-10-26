@@ -1,16 +1,26 @@
 import * as express from 'express';
-import { all } from "../procedures/categories.proc";
+import * as procedures from '../procedures/categories.proc';
+
 
 let router = express.Router();
 
-router.get('/', (req, res) => { //actually /api/categories/
-    all()
+router.get('/', (req, res) => {
+    procedures.all()
     .then((categories) => {
         res.send(categories);
-    }).catch((err) => {
-        console.log(err);
+    }).catch((e) => {
+        console.log(e);
         res.sendStatus(500);
     });
-}); 
+});
+router.get('/:id', (req, res) => {
+    procedures.read(req.params.id)
+    .then((categories) => {
+        res.send(categories);
+    }).catch((e) => {
+        console.log(e);
+        res.sendStatus(500);
+    });
+});
 
 export default router;
