@@ -1,31 +1,31 @@
-<!-- Navigation bar -->
 <nav class="navbar navbar-expand-md fixed-top nav-color">
-        <!-- Covalence logo linking to homepage -->
     <a class="navbar-brand" href="/">
-        <img src="/images/newlogo.png" width="200"/>
-        </a>
-        <!-- Navbar toggle -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Menu bar with Apparel and Misc -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                    <li class="nav-item nav-text">                            
-                    <a class="nav-link" href="/apparel">Apparel<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item nav-text">
-                    <a class="nav-link" href="/misc">Misc</a>
-                </li>
-                <li class="nav-item nav-text">
-                    <a class="nav-link" href="/contactus">Contact Us</a>
-            </ul>
-            <!-- Cart, need to work on popover showing content from cart.html -->
-            <!-- <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-link my-2 my-sm-0" type="submit" data-toggle="popover" data-placement="bottom" data content="Vivamus
-                sagittis lacus vel augue laoreet rutrum faucibus.">Cart</button>
-            </form> -->
-            <div>Cart</div>
-            <a href="/checkout"><div class="circle">1<div></a>
-        </div>
-    </nav>
+      <img src="/images/Newlogo.png" width="200" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item {{ activePage === 'apparel' ? 'active' : '' }}">
+          <a class="nav-link selected" href="/apparel" ng-click="selected = 'apparel'">Apparel</a>
+        </li>
+        <li class="nav-item {{ activePage === 'misc' ? 'active' : '' }}">
+          <a class="nav-link selected" href="/misc" ng-click="selected = 'misc'">Misc</a>
+        </li>
+        <li class="nav-item {{ activePage === 'contactus' ? 'active' : '' }}">
+          <a class="nav-link selected" href="/contactus" ng-click="selected = 'contactus'">Contact Us</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item nav-text">
+            <a class="nav-link" href="/checkout">Cart</a>
+    </ul>
+      <form class="form-inline">
+        <a href="/checkout"><div class="circle">1<div></a>
+      </form>
+    </div>
+  </nav>
+
+    

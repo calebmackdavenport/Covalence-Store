@@ -1,6 +1,7 @@
 angular.module('store', [
     'ngRoute',
     'ngResource',
+    'store.factories',
     'store.controllers', 
     'store.services',
     'store.directives'
@@ -13,6 +14,14 @@ angular.module('store', [
         templateUrl: 'views/welcome.html',
         controller: 'WelcomeController'
     })
+    .when('/apparel', {
+        templateUrl: 'views/apparel.html',
+        controller: 'ApparelController'
+    })
+    .when('/misc', {
+        templateUrl: 'views/misc.html',
+        controller: 'MiscController'
+    })
     .when('/products', {
         templateUrl: 'views/productList.html',
         controller: 'ProductsController'
@@ -20,10 +29,6 @@ angular.module('store', [
     .when('/contactus', {
         templateUrl: 'views/contact.html',
         controller: 'ContactUsController'
-    })
-    .when('/:id', {
-        templateUrl: 'views/singleProduct.html',
-        controller: 'SingleItemController'
     })
     .when('/checkout', {
         templateUrl: 'views/checkout.html',

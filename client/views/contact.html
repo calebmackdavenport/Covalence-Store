@@ -1,3 +1,21 @@
-<main-navigation></main-navigation>
-<p>Contact</p>
+<main-navigation active-page="'contact'"></main-navigation>
+<div id="contact-form">
+    <form ng-submit="send()">
+        <div class="form-group">
+            <!-- your name -->
+            <input type="email" id="name" placeholder="your name" class="form-control" ng-model="name" />
+                </div>
+        <div class="form-group">
+            <!-- your email address -->
+            <input type="email" id="email" placeholder="your email address" class="form-control" ng-model="email" />
+        </div>
+        <div class="form-group">
+            <!-- your message -->
+            <textarea rows="3" class="form-control" placeholder="your message" id="message" ng-model="message" />
+            </textarea>
+        </div>
+        <!-- Send button -->
+        <input type="submit" value="Send" class="btn btn-primary btn-lg" />
+    </form>
+</div>
 <footer-navigation></footer-navigation>

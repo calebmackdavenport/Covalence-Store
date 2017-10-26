@@ -1,7 +1,6 @@
-angular.module('storeApp.factories', [])
+angular.module('store.factories', [])
 .factory('Product', ['$resource', function($resource) {
-    return $resource('/api/product/:id', {id: '@id'}, {
-    });
+    return $resource('/api/products/:id', { id: '@id' });
 }])
 .factory('Apparel', ['$resource', function($resource) {
     return $resource('/api/apparel/:id', {id: '@id'}, {
@@ -20,3 +19,4 @@ angular.module('storeApp.factories', [])
 .factory('Checkout', ['$resource', function($resource) {
     return $resource('/api/checkout/:id');
 }]);
+
