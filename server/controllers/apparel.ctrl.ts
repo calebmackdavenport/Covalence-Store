@@ -5,7 +5,7 @@ let router = express.Router();
 
 //display all products
 router.get('/', (req, res) => {
-        procedures.all()
+        procedures.all(1)
         .then((apparel) => {
             res.send(apparel);
         }).catch((err) => {
