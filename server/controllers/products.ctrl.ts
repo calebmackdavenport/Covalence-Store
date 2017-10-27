@@ -8,6 +8,7 @@ router.get('/', (req, res) => {
         procedures.all()
         .then((product) => {
             res.send(product);
+            console.log("this is just / ")
         }).catch((err) => {
             console.log(err);
             res.sendStatus(500);
@@ -16,7 +17,7 @@ router.get('/', (req, res) => {
 
 //display single misc
 
-router.get('/categories/product/:id', (req, res) => {
+router.get('/:id', (req, res) => {
     procedures.read(req.params.id)
     .then((product) => {
         console.log("testing id");
@@ -27,11 +28,12 @@ router.get('/categories/product/:id', (req, res) => {
     });
 });
 
+// navigates here on click of misc or apparel
 router.get('/categories/:id', (req, res) => {
         procedures.categoryread(req.params.id)
         .then((product) => {
             res.send(product);
-            console.log("testing category");
+            // console.log(product);
         }).catch((e) => {
             console.log(e);
             res.sendStatus(500);

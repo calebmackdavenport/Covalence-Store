@@ -92,8 +92,9 @@
             <div class="row line-line"> 
                <div class="col-xs-12 col-md-6 col-sm-4" ng-repeat="product in products">
                    <div class="center-block products">
-                       <a href="/{{ product.id }}"><img src="{{ product.imageurl }}" class="thumbnail product-thumbnail product img-responsive" alt="{{ product.title }}"></a>
-                       <a href="/{{ product.id }}"><div class="grid-market">
+                        <a href="/item/{{ product.id }}">   
+                    <img src="{{ product.imageurl }}" class="thumbnail product-thumbnail product img-responsive" ng-click="changeView()" alt="{{ product.title }}">
+                       <div class="grid-market">
                            <h4 class="description">{{ product.title }}
                                <p>{{ product.description }}</p>
                        <span class="currency">${{ product.price }}</span></h4></div></a>
