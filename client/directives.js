@@ -2,6 +2,7 @@ angular.module('store.directives', [])
 .directive('mainNavigation', [function() {
     return {
         templateUrl: 'directives/navbar.html',
+        controller: 'navController',
         restrict: 'E',
         scope: {
             activePage: '='
