@@ -10,7 +10,6 @@ angular.module('store.controllers', [])
 }])
 .controller('ApparelController', ['$scope', 'Apparel', 'ProductByCatId', 'SEOService', '$location', function($scope, Apparel, ProductByCatId, SEOService, $location) {
     $scope.products = ProductByCatId.query({ id: 1 });
-    console.log($scope.products);
     $scope.changeView = function (id) {
         $location.url('/product/' + id);
     }
@@ -34,26 +33,25 @@ angular.module('store.controllers', [])
         description: 'Covalence Misc'
     })
 }])
-.controller('SingleItemController', ['$scope', '$rootScope', 'Product', 'SEOService', '$location', '$routeParams', function($scope, $rootScope, Product, SEOService, $location, $routeParams) {
-    $scope.product = Product.get({id: $routeParams.id});
-
-    if(localStorage.items === undefined) 
-        localStorage.items = JSON.stringify([]);
-
-    $scope.addItem = function() {
-        alert('Item added to Cart!');
-        let cachedItems = JSON.parse(localStorage.items);// "[[title, description, image, price],[title, description, image, price]]"
-        cachedItems.push($scope.product);// [[title, description, image, price],[title, description, image, price], ...]
-        localStorage.items = JSON.stringify(cachedItems);// "[[title, description, image, price],[title, description, image, price], ...] "
-        //localStorage.setItem('product', JSON.stringfy($scope.product)); <-previous way
-        $rootScope.$broadcast("cartChanged");
-    }
-
-    SEOService.setSEO({
+.controller('SingleProductController', ['$scope', '$rootScope', 'Product', 'SEOService', '$location', '$routeParams', function($scope, $rootScope, Product, SEOService, $location, $routeParams) {
+    $scope.product = Product.get({id: $routeParams.theId}, function(success) {
+        SEOService.setSEO({
             title: $scope.product.title,
             url: $location.url(),
             description: 'Covalence Store'
+        });
     });
+    
+    if(localStorage.items === undefined) 
+         localStorage.items = JSON.stringify([]);
+    
+    $scope.addItem = function() {
+        alert('Item added to Cart!');
+        let cachedItems = JSON.parse(localStorage.items);
+        cachedItems.push($scope.product);
+        localStorage.items = JSON.stringify(cachedItems);
+        $rootScope.$broadcast("cartChanged");
+    }
 
 }])
 .controller('ProductsController', ['$scope', '$rootScope', 'Product', 'SEOService', '$location', '$routeParams', function($scope, $rootScope, Product, SEOService, $location, $routeParams) {

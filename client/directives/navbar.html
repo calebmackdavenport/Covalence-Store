@@ -6,15 +6,18 @@
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <span class="divider-vertical"></span>
+
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item {{ activePage === 'apparel' ? 'active' : '' }}">
+        <li class="nav-item nav-text {{ activePage === 'apparel' ? 'active' : '' }}">
           <a class="nav-link selected" href="/apparel" ng-click="selected = 'apparel'">Apparel</a>
         </li>
-        <li class="nav-item {{ activePage === 'misc' ? 'active' : '' }}">
+        <li class="nav-item nav-text {{ activePage === 'misc' ? 'active' : '' }}">
           <a class="nav-link selected" href="/misc" ng-click="selected = 'misc'">Misc</a>
         </li>
-        <li class="nav-item {{ activePage === 'contactus' ? 'active' : '' }}">
+        <li class="nav-item nav-text {{ activePage === 'contactus' ? 'active' : '' }}">
           <a class="nav-link selected" href="/contactus" ng-click="selected = 'contactus'">Contact Us</a>
         </li>
       </ul>

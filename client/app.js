@@ -22,10 +22,6 @@ angular.module('store', [
         templateUrl: 'views/misc.html',
         controller: 'MiscController'
     })
-    .when('/products', {
-        templateUrl: 'views/productList.html',
-        controller: 'ProductsController'
-    })
     .when('/contactus', {
         templateUrl: 'views/contact.html',
         controller: 'ContactUsController'
@@ -37,6 +33,10 @@ angular.module('store', [
     .when('/cart', {
         templateUrl: 'views/cart.html',
         controller: 'CartController'
+    })
+    .when('/:theid', {
+        templateUrl: 'views/productList.html',
+        controller: 'SingleProductController'
     })
     .otherwise({
         redirectTo: '/'
