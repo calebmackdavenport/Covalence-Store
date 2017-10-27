@@ -34,8 +34,8 @@ angular.module('store', [
         templateUrl: 'views/cart.html',
         controller: 'CartController'
     })
-    .when('/:theid', {
-        templateUrl: 'views/productList.html',
+    .when('/item/:id', {
+        templateUrl: 'views/singleProduct.html',
         controller: 'SingleProductController'
     })
     .otherwise({

@@ -1,116 +1,29 @@
-<main-navigation active-page="'apparel'"></main-navigation>
-
-<!-- <div class="container">
-    
-    <div id="products" class="row list-group">
-            <div class="item  col-xs-4 col-lg-4">
-                    <div class="thumbnail">
-                        <img class="group list-group-image" src="/images/covalence-store-apparel-09.png" alt="" />
-                        <div class="caption">
-                            <h4 class="group inner list-group-item-heading">
-                                {{product.title}} </h4>
-                            <p class="group inner list-group-item-text">
-                                A dark t-shirt with the Covalence logo. Much style. Very chic. Wow!</p>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        $15</p>
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item  col-xs-4 col-lg-4">
-                    <div class="thumbnail">
-                        <img class="group list-group-image" src="/images/covalence-store-apparel-10.png" alt="" />
-                        <div class="caption">
-                            <h4 class="group inner list-group-item-heading">
-                                White Graphic Tee</h4>
-                            <p class="group inner list-group-item-text">
-                                A white t-shirt with embazoned with Covalence grapics!</p>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        $15</p>
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item  col-xs-4 col-lg-4">
-                    <div class="thumbnail">
-                        <img class="group list-group-image" src="/images/covalence-store-apparel-11.png" alt="" />
-                        <div class="caption">
-                            <h4 class="group inner list-group-item-heading">
-                                Blue Tee</h4>
-                            <p class="group inner list-group-item-text">
-                                Yo listen up, here's the story about a cool cat rockin a blue shirt!</p>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        $15</p>
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item  col-xs-4 col-lg-4">
-                    <div class="thumbnail">
-                        <img class="group list-group-image" src="/images/covalence-store-apparel-12.png" alt="" />
-                        <div class="caption">
-                            <h4 class="group inner list-group-item-heading">
-                                Graphic Pullover</h4>
-                            <p class="group inner list-group-item-text">
-                                Wear it to bed, wear it to work the next day! Nothing beats this pullover. Sweats are so fetch!</p>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        $25</p>
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <div class="jumbotron" id="apparel-pic"></div>
-
-        <div class="container-fluid">
-            <div class="row line-line"> 
-               <div class="col-xs-12 col-md-6 col-sm-4" ng-repeat="product in products">
-                   <div class="center-block products">
-                       <a href="/{{ product.id }}"><img src="{{ product.imageurl }}" class="thumbnail product-thumbnail product img-responsive" alt="{{ product.title }}"></a>
-                       <a href="/{{ product.id }}"><div class="grid-market">
-                           <h4 class="description">{{ product.title }}
-                               <p>{{ product.description }}</p>
-                       <span class="currency">${{ product.price }}</span></h4></div></a>
+<main-navigation active-page="'apparel'"></main-navigation>       
+       
+       <header>
+           <img src="/images/covalence-store-apparel-hero.jpg" height="+150" width="100%"--/>
+       </header>
+       
+       <div class="container-fluid">
+           <div id="products" class="row line-line">
+                   <div class="item col-xs-4 col-lg-4" ng-repeat="product in products">
+                        <a href="/item/{{ product.id }}">
+                           <div class="thumbnail">
+                               <img class="thumbnail product-thumbnail product img-responsive" src="{{ product.imageurl }}" height="300" width="300" vspace="20" alt=""{{ product.title }}"" />
+                               <div class="caption">
+                                   <a href="/item/{{ product.id }}"><div class="grid-market">
+                                  <h4 class="description">{{ product.title }}
+                                   <div class="row">
+                                       <div class="col-xs-12 col-md-6">
+                                           <span class="currency">${{ product.price }}</span>
+                                       </div>
+                                       <br>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
                    </div>
                </div>
-            </div> 
-       </div>
-
-       
-
-
-<!--        
-       <div class="jumbotron" id="apparel-pic"></div>
-       
-       <div class="product-box" ng-repeat="product in products">
-           <img class="list-pic" ng-src="{{ product.imageurl }}" ng-click="changeView(product.id)">
-           <h4 class="product-title">{{ product.title }}</h4><h5 class="product-price">${{ product.price }}</h5>
-       </div> -->
+               
 
 <footer-navigation></footer-navigation>

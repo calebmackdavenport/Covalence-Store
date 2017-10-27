@@ -10,9 +10,6 @@ angular.module('store.controllers', [])
 }])
 .controller('ApparelController', ['$scope', 'Apparel', 'ProductByCatId', 'SEOService', '$location', function($scope, Apparel, ProductByCatId, SEOService, $location) {
     $scope.products = ProductByCatId.query({ id: 1 });
-    $scope.changeView = function (id) {
-        $location.url('/product/' + id);
-    }
 
     SEOService.setSEO({
         title: 'Apparel Page',
@@ -22,10 +19,6 @@ angular.module('store.controllers', [])
 }])
 .controller('MiscController', ['$scope', 'Misc', 'ProductByCatId', 'SEOService', '$location', function($scope, Misc, ProductByCatId, SEOService, $location) {
     $scope.products = ProductByCatId.query({ id: 2 });
-    console.log($scope.products);
-    $scope.changeView = function (id) {
-        $location.url('/product/' + id);
-    }
 
     SEOService.setSEO({
         title: 'Covalence Store - Misc',
@@ -34,13 +27,7 @@ angular.module('store.controllers', [])
     })
 }])
 .controller('SingleProductController', ['$scope', '$rootScope', 'Product', 'SEOService', '$location', '$routeParams', function($scope, $rootScope, Product, SEOService, $location, $routeParams) {
-    $scope.product = Product.get({id: $routeParams.theId}, function(success) {
-        SEOService.setSEO({
-            title: $scope.product.title,
-            url: $location.url(),
-            description: 'Covalence Store'
-        });
-    });
+    $scope.product = Product.get({id: $routeParams.id});
     
     if(localStorage.items === undefined) 
          localStorage.items = JSON.stringify([]);
@@ -53,6 +40,11 @@ angular.module('store.controllers', [])
         $rootScope.$broadcast("cartChanged");
     }
 
+    SEOService.setSEO({
+        title: $scope.product.title,
+        url: $location.url(),
+        description: 'Covalence Store'
+    });
 }])
 .controller('ProductsController', ['$scope', '$rootScope', 'Product', 'SEOService', '$location', '$routeParams', function($scope, $rootScope, Product, SEOService, $location, $routeParams) {
     $scope.product = product.query();
@@ -107,7 +99,7 @@ angular.module('store.controllers', [])
         }
 
         let discountCode10 = 'notpayingthatforamug';
-        let discountCode20 = 'Garlic.io';
+        let discountCode20 = 'groupprojectssuck';
         let discountsToBeApplied = 1;
 
         $scope.applyDiscount = function () {
