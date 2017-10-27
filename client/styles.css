@@ -117,6 +117,12 @@ li a {
 
 
 /* APPAREL MISC */
+.ng-binding{
+    color: rgb(67, 182, 200);
+}
+.currency {
+    color: black;
+}
 #apparel-pic {
     background-image: url("/images/covalence-store-apparel-hero.jpg");
     background-size: cover;
@@ -197,6 +203,7 @@ li a {
 }
 .currency-b {
     color: rgb(67, 182, 200);
+    /* color: red; */
 }
 .description-b {
     color: rgb(118,120, 133);
