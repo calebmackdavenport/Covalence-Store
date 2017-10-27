@@ -1,22 +1,47 @@
 <main-navigation active-page="'contactus'"></main-navigation>
-<div id="contact-form">
-    <form ng-submit="send()">
-        <div class="form-group">
-            <!-- your name -->
-            <input type="email" id="name" placeholder="your name" class="form-control" ng-model="name" />
+
+<div class="container" id="pushitdown">
+    <br></br>
+    <center><h3>  We'd love to hear from you!</h3></center>
+    <br>
+        <div class="row">
+                        <div class="col-sm-8 action-call h4">Drop us a note.
+                            <br></br>
+                                <div class="contact-label h5">Name
+                                        <div class="form-group">
+                                                <input type="name" id="name" placeholder="Joe Doe" class="form-control" ng-model="name" />
+                                                    </div>
+                                </div>
+                                <div class="contact-label h5">E-mail
+                                        <div class="form-group">
+                                                <input type="email" id="email" placeholder="yourname@email.com" class="form-control" ng-model="email" />
+                                </div>
+                                <div class="contact-label h5">Message
+                                        <div class="form-group">
+                                                <textarea rows="3" class="form-control" placeholder="Thoughts? Questions? Requests?" id="message" ng-model="message" />
+                                                </textarea>
+                                            </div>
+                                </div>
+                                <input type="submit" value="Send" ng-click="contact()" class="btn btn-info" />
+                            </div>
                 </div>
-        <div class="form-group">
-            <!-- your email address -->
-            <input type="email" id="email" placeholder="your email address" class="form-control" ng-model="email" />
+                <div class="col-sm-4 action-call h4">Connect with us.
+                    <div class="">
+                        <br>
+                            <a href="https://www.facebook.com/covalence.io/" class="fa fa-facebook"></a>
+                            
+                    </div>
+                    <div class="">
+                        <br>
+                            <a href="https://twitter.com/covalence_io" class="fa fa-twitter"></a>
+
+                    </div>
+                    <div class=""></div>
+                        <br>
+                        <a href="https://www.instagram.com/covalence.io/" class="fa fa-instagram"></a>
+                </div>
         </div>
-        <div class="form-group">
-            <!-- your message -->
-            <textarea rows="3" class="form-control" placeholder="your message" id="message" ng-model="message" />
-            </textarea>
-        </div>
-        <!-- Send button -->
-        <input type="submit" value="Send" class="btn btn-primary btn-lg" />
-    </form>
+            </div>
 </div>
 
 <footer-navigation></footer-navigation>
