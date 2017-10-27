@@ -10,7 +10,7 @@ angular.module('store.controllers', [])
 }])
 .controller('ApparelController', ['$scope', 'Apparel', 'ProductByCatId', 'SEOService', '$location', function($scope, Apparel, ProductByCatId, SEOService, $location) {
     $scope.products = ProductByCatId.query({ id: 1 });
-
+    console.log($scope.products);
     SEOService.setSEO({
         title: 'Apparel Page',
         url: $location.url(),
@@ -168,4 +168,36 @@ angular.module('store.controllers', [])
         url: $location.url(),
         description: 'Checkout from the Covalence Store!'
     })
+}])
+.controller('navController', ['$scope', '$rootScope', '$location', 'Checkout',  function($scope, $rootScope, $location, Checkout) {
+    if (localStorage.items === undefined)
+    localStorage.items = angular.toJson([]);
+$scope.cart = angular.fromJson(localStorage.items);
+let total = 0;
+for (let i = 0; i < $scope.cart.length; i++) {
+    total += $scope.cart[i].price;
+}
+$scope.total = total
+$scope.removeItem = function (product) {
+    let index = $scope.cart.indexOf(product)
+    if (index > -1) {
+        $scope.cart.splice(index, 1);
+    }
+    localStorage.items = angular.toJson($scope.cart);
+    $scope.total -= product.price;
+    $rootScope.$broadcast("cartChanged");
+}
+let discountCode10 = 'notpayingthatforamug';
+let discountCode20 = 'groupprojectssuck';
+let discountsToBeApplied = 1;
+$scope.applyDiscount = function () {
+    if ($scope.discountValue === discountCode10 && discountsToBeApplied >= 1) {
+        $scope.total *= .9;
+        discountsToBeApplied = 0;
+    }
+    if ($scope.discountValue === discountCode20 && discountsToBeApplied >= 1) {
+        $scope.total *= .8;
+        discountsToBeApplied = 0;
+    }
+}
 }]);

@@ -10,7 +10,8 @@ router.post('/', (req, res) => {
     .then(function(response) {
         console.log(response);
         // TODO test if response.id or req.body.customer (provides: string | customers.ICustomer;)
-        return procedures.create(req.body.amount, req.body.customer);
+        console.log(response.id);
+        return procedures.create(req.body.amount, response.id);
     })
     .then(function(response) {
     let content = `<h3>Thank you for shopping with Covalence</h3>`;

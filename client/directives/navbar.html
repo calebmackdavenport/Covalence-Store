@@ -26,9 +26,40 @@
             <a class="nav-link" href="/checkout">Cart</a>
     </ul>
       <form class="form-inline">
-        <a href="/checkout"><div class="circle">1<div></a>
+        <div class="circle">{{ cart.length }}<div>
       </form>
     </div>
   </nav>
 
-    
+  
+  <div class="menu-wrap">
+      <div class="menu-sidebar">
+          <ul class="menu">
+          </br>
+          <h3>Your Shopping Cart</h3>
+          <a href="/apparel"><button id="cancel-return" class="btn btn-lg" type="submit" value=" Cancel and continue Shopping"> Cancel and continue Shopping</button></a>
+          <br><br>
+          <div class="input-group" ng-repeat="product in cart">
+            <div class="taco" >
+              <div class="taco">
+                <img class="cart-img" src="{{ product.imageurl }}" alt="">
+              </div>
+              <div class="taco">
+              {{ product.title }}<button id="cancel-return" class="btn btn-xs" style="margin-top: 0.25em; float: left;" ng-click="removeItem(product)">Remove</button></div>
+                <div class="product-right">${{ product.price}}</div>
+              </div>
+            </div>
+            <h3>Order Summary</h3>
+            <input class="form-control" type="text" ng-model="discountValue" placeholder="Discount Code"><button class="btn apply" ng-click="applyDiscount()">Apply</button>
+            <br>
+          <div class="taco">
+            <h4>Order Total:</h4>
+          </div>
+          <div class="taco">
+            <h4 class="currency-b">{{ total | currency }}</h4>
+          </div>
+        </div>
+        </div>
+          </ul>           
+      </div>
+  </div>
