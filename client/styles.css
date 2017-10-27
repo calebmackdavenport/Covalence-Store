@@ -2,7 +2,13 @@
 main navigation {
     position: relative;
 }
-.nav-text {
+/* .nav-text {
+    color: rgb(67, 182, 200);
+    margin-top: 0.3em; 
+    font-size: 1.25em;
+    text-transform: uppercase; 
+} */
+li a {
     color: rgb(67, 182, 200);
     margin-top: 0.3em; 
     font-size: 1.25em;
@@ -30,6 +36,12 @@ main navigation {
     border-bottom-color: white;
     color: white !important;
     background-color: transparent !important;
+}
+.divider-vertical {
+    height: 50px;
+    margin: 0 9px;
+    border-left: 2px solid rgb(67, 182, 200);
+    border-right: 2px solid rgb(67, 182, 200);
 }
 
 
@@ -105,6 +117,12 @@ main navigation {
 
 
 /* APPAREL MISC */
+#apparel-pic {
+    background-image: url("/images/covalence-store-apparel-hero.jpg");
+    background-size: cover;
+    height: 16em;
+    width: 100%;
+}
 .glyphicon { margin-right:5px; }
 .thumbnail
 {
@@ -166,7 +184,33 @@ main navigation {
 
 
 /* SINGLE */
+.product-hero {
+    width: 100%;
+}
 
+.product-thumbnail {
+    width: 250px;
+}
+
+.single-container {
+    margin: 10em 5em 2em;
+}
+.currency-b {
+    color: rgb(67, 182, 200);
+}
+.description-b {
+    color: rgb(118,120, 133);
+    font-size: 0.85em;
+}
+#add-btn {
+    border-radius: none;
+    padding: 1em;
+    margin-top: 1.5em;
+    width: 12em;
+}
+#add-btn:focus {
+    outline: 0;
+}
 
 
 /* CONTACT */

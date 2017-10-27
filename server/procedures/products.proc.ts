@@ -1,11 +1,11 @@
 var db = require('../config/db');
-import { rows } from '../config/db';
+import { rows, row } from '../config/db';
 
 export function all(): Promise<Array<models.IProduct>>{
-    return db.rows('getAllProducts');
+    return rows('getAllProducts');
 }
 export function read(id: number): Promise<models.IProduct> {
-    return db.row('getProduct', [id]);
+    return row('getProduct', [id]);
 }
 export function categoryread(categoryid: number): Promise<Array<models.IProduct>> {
     return rows('getProductByCatId', [categoryid]);

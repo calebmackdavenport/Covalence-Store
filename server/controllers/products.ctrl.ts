@@ -14,27 +14,30 @@ router.get('/', (req, res) => {
         });
     });
 
-    router.get('/categories/:id', (req, res) => {
-        procedures.categoryread(req.params.id)
-        .then((product) => {
-            res.send(product);
-            console.log("test");
-        }).catch((e) => {
-            console.log(e);
-            res.sendStatus(500);
-        });
-    });
-
 //display single misc
 
-router.get('/:id', (req, res) => {
+router.get('/categories/product/:id', (req, res) => {
     procedures.read(req.params.id)
     .then((product) => {
+        console.log("testing id");
         res.send(product);
     }).catch((e) => {
         console.log(e);
         res.sendStatus(500);
     });
 });
+
+router.get('/categories/:id', (req, res) => {
+        procedures.categoryread(req.params.id)
+        .then((product) => {
+            res.send(product);
+            console.log("testing category");
+        }).catch((e) => {
+            console.log(e);
+            res.sendStatus(500);
+        });
+    });
+
+
 
 export default router;
