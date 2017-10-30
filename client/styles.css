@@ -391,3 +391,13 @@ li a {
 #pushitdown {
     margin-top: 68px;
 }
+
+li a {
+    color: rgb(67, 182, 200);
+    margin-top: 0.3em; 
+    font-size: 1.25em;
+    text-transform: uppercase; 
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(67, 182, 200);
+}
