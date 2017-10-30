@@ -1,16 +1,20 @@
-<nav class="navbar navbar-expand-md fixed-top nav-color">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top nav-color">
     <a class="navbar-brand" href="/">
       <img src="/images/Newlogo.png" width="200" />
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> -->
 
-    <span class="divider-vertical"></span>
+    
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
+          <span class="divider-vertical"></span>
         <li class="nav-item nav-text {{ activePage === 'apparel' ? 'active' : '' }}">
           <a class="nav-link selected" href="/apparel" ng-click="selected = 'apparel'">Apparel</a>
         </li>
